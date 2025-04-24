@@ -1,4 +1,5 @@
 defaultNamespace: monitoring
-helm:
-  releaseName: import-monitoring
-  chart: ./manifests
+resources:
+  - manifests/crds/servicemonitor-crd.yaml
+  - manifests/node-exporter.yaml
+  - manifests/servicemonitor.yaml

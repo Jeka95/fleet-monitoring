@@ -13,28 +13,28 @@ spec:
         app: node-exporter
     spec:
       containers:
-      - name: node-exporter
-        image: prom/node-exporter:latest
-        ports:
-        - containerPort: 9100
-          name: metrics
-        resources:
-          requests:
-            cpu: 50m
-            memory: 50Mi
-        volumeMounts:
-        - name: proc
-          mountPath: /host/proc
-          readOnly: true
-        - name: sys
-          mountPath: /host/sys
-          readOnly: true
+        - name: node-exporter
+          image: prom/node-exporter:latest
+          ports:
+            - containerPort: 9100
+              name: metrics
+          resources:
+            requests:
+              cpu: 50m
+              memory: 50Mi
+          volumeMounts:
+            - name: proc
+              mountPath: /host/proc
+              readOnly: true
+            - name: sys
+              mountPath: /host/sys
+              readOnly: true
       hostNetwork: true
       hostPID: true
       volumes:
-      - name: proc
-        hostPath:
-          path: /proc
-      - name: sys
-        hostPath:
-          path: /sys
+        - name: proc
+          hostPath:
+            path: /proc
+        - name: sys
+          hostPath:
+            path: /sys
