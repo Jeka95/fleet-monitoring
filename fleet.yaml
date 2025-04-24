@@ -1,4 +1,6 @@
-defaultNamespace: monitoring
+defaultNamespace: cattle-monitoring-system
 helm:
-  releaseName: import-monitoring
-  chart: ./manifests
+  chart: ./charts/prometheus-agent
+  releaseName: prometheus-agent
+  valuesFiles:
+    - values.yaml

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: prometheus-agent
+description: Lightweight Prometheus Agent
+version: 0.1.0

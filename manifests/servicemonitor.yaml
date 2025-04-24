@@ -2,20 +2,14 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: node-exporter
-  namespace: monitoring
+  namespace: cattle-monitoring-system
   labels:
-    release: rancher-monitoring
+    release: prometheus-agent
 spec:
   selector:
     matchLabels:
       app: node-exporter
   endpoints:
     - port: metrics
-      interval: 30s
-      relabelings:
-        - sourceLabels: [__meta_kubernetes_namespace]
-          targetLabel: cluster
-          replacement: imported-cluster
-  namespaceSelector:
-    matchNames:
-      - monitoring
+      interval: 15s
+      path: /metrics

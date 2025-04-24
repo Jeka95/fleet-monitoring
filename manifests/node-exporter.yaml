@@ -2,7 +2,9 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: node-exporter
-  namespace: monitoring
+  namespace: cattle-monitoring-system
+  labels:
+    app: node-exporter
 spec:
   selector:
     matchLabels:
@@ -14,14 +16,17 @@ spec:
     spec:
       containers:
         - name: node-exporter
-          image: prom/node-exporter:latest
+          image: quay.io/prometheus/node-exporter:v1.7.0
           ports:
             - containerPort: 9100
               name: metrics
           resources:
             requests:
               cpu: 50m
-              memory: 50Mi
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
           volumeMounts:
             - name: proc
               mountPath: /host/proc
@@ -29,8 +34,6 @@ spec:
             - name: sys
               mountPath: /host/sys
               readOnly: true
-      hostNetwork: true
-      hostPID: true
       volumes:
         - name: proc
           hostPath:
