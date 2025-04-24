@@ -1,5 +1,5 @@
 defaultNamespace: monitoring
 resources:
-  - manifests/crds/servicemonitor-crd.yaml
-  - manifests/node-exporter.yaml
-  - manifests/servicemonitor.yaml
+  - name: manifests/crds/servicemonitor-crd.yaml
+  - name: manifests/node-exporter.yaml
+  - name: manifests/servicemonitor.yaml
