@@ -1,0 +1,4 @@
+defaultNamespace: monitoring
+helm:
+  releaseName: import-monitoring
+  chart: ./manifests
