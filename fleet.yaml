@@ -3,4 +3,4 @@ helm:
   chart: ./charts/prometheus-agent
   releaseName: prometheus-agent
   valuesFiles:
-    - values.yaml
+    - ./charts/prometheus-agent/values.yaml
