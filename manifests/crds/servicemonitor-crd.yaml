@@ -5,10 +5,11 @@ metadata:
 spec:
   group: monitoring.coreos.com
   names:
-    kind: ServiceMonitor
-    listKind: ServiceMonitorList
     plural: servicemonitors
     singular: servicemonitor
+    kind: ServiceMonitor
+    shortNames:
+      - sm
   scope: Namespaced
   versions:
     - name: v1
@@ -17,4 +18,23 @@ spec:
       schema:
         openAPIV3Schema:
           type: object
-  preserveUnknownFields: true
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            metadata:
+              type: object
+            spec:
+              type: object
+              properties:
+                selector:
+                  type: object
+                endpoints:
+                  type: array
+                  items:
+                    type: object
+                namespaceSelector:
+                  type: object
+  conversion:
+    strategy: None
