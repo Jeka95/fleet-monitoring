@@ -1,6 +1,0 @@
-defaultNamespace: cattle-monitoring-system
-helm:
-  chart: ./charts/prometheus-agent
-  releaseName: prometheus-agent
-  valuesFiles:
-    - ./charts/prometheus-agent/values.yaml
