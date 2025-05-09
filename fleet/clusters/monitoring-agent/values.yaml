@@ -1,0 +1,23 @@
+global:
+  cattle:
+    clusterId: ${CLUSTER_NAME}
+
+prometheus:
+  prometheusSpec:
+    replicas: 1
+    enableAdminAPI: false
+    enableRemoteWriteReceiver: false
+    retention: 24h
+    scrapeInterval: 30s
+    externalLabels:
+      cluster: ${CLUSTER_NAME}
+    remoteWrite:
+      - url: http://rancher-monitoring-prometheus.cattle-monitoring-system.svc:9090/api/v1/write
+
+alertmanager:
+  enabled: false
+
+grafana:
+  enabled: false
+
+additionalPrometheusRulesMap: {}
