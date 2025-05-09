@@ -8,8 +8,7 @@ prometheus:
     enableAdminAPI: false
     enableRemoteWriteReceiver: false
     enableFeatures:
-      - agent # ← ВАЖЛИВО: вмикаємо агентний режим
-    retention: 1h
+      - agent # ← Агентний режим
     scrapeInterval: 30s
     evaluationInterval: 5m
     ruleSelectorNilUsesHelmValues: false
@@ -19,7 +18,6 @@ prometheus:
       - url: https://prometheus.t4vpcprod.ubos.tech/api/v1/write
         tlsConfig:
           insecureSkipVerify: true
-    walCompression: true
 
   additionalScrapeConfigs: []
   additionalAlertManagerConfigs: []
