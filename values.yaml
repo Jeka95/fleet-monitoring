@@ -1,6 +1,6 @@
 global:
   cattle:
-    clusterId: ${CLUSTER_NAME}
+    clusterId: ubos-edoxo
 
 prometheus:
   prometheusSpec:
@@ -12,7 +12,7 @@ prometheus:
     evaluationInterval: 5m # інтервал оцінки правил (але ми вимикаємо rules)
     ruleSelectorNilUsesHelmValues: false
     externalLabels:
-      cluster: ${CLUSTER_NAME}
+      cluster: ubos-edoxo
     remoteWrite:
       - url: https://prometheus.t4vpcprod.ubos.tech/api/v1/write
         tlsConfig:
