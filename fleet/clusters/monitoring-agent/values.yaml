@@ -12,7 +12,7 @@ prometheus:
     externalLabels:
       cluster: ${CLUSTER_NAME}
     remoteWrite:
-      - url: http://rancher-monitoring-prometheus.cattle-monitoring-system.svc:9090/api/v1/write
+      - url: https://prometheus.t4vpcprod.ubos.tech/api/v1/write
 
 alertmanager:
   enabled: false
