@@ -1,9 +1,8 @@
-defaultNamespace: cattle-monitoring-system
-
+defaultNamespace: monitoring
 helm:
-  releaseName: monitoring-agent
-  chart: rancher-monitoring
-  repo: https://charts.rancher.io
-  version: 104.1.4+up57.0.3
+  releaseName: prometheus-agent
+  chart: prometheus
+  repo: https://prometheus-community.github.io/helm-charts
+  version: 25.17.0
   valuesFiles:
     - values.yaml
