@@ -5,3 +5,5 @@ helm:
   chart: rancher-monitoring
   repo: https://charts.rancher.io
   version: 104.1.4+up57.0.3
+  valuesFiles:
+    - values.yaml
