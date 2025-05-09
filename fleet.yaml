@@ -1,8 +1,9 @@
 defaultNamespace: monitoring
+
 helm:
   releaseName: prometheus-agent
-  chart: prometheus
+  chart: prometheus-agent
   repo: https://prometheus-community.github.io/helm-charts
-  version: 25.17.0
+  version: 1.0.0 # або конкретну версію, що підтримує агент-режим
   valuesFiles:
     - values.yaml
